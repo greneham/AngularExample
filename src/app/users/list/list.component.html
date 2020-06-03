@@ -1,0 +1,19 @@
+<div class="album py-1">
+  <div class="container">
+    
+    <app-title [title]="title"></app-title>
+
+    <div class="row">
+      <div *ngFor="let u of users" class="col-md-4" (click)="clickUser(u.id)">
+        <div class="card mb-4 box-shadow">
+          <img class="card-img-top" [src]="u.avatar" alt="{{u.first_name}} {{u.last_name}}">
+          <div class="card-body">
+            <h5 class="card-text">{{u.first_name}} {{u.last_name}}</h5>
+            <p class="card-text">{{u.email}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-pagination [numPages]="numPages" [currentPage]="currentPage" [baseUrl]="baseUrl" ></app-pagination>
+  </div>
+</div>

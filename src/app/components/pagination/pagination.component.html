@@ -1,0 +1,13 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item" [ngClass]="{'disabled': prevDisabled}">
+    	<a class="page-link" [routerLink]="prevUrl">Previous</a>
+   	</li>
+    <li *ngFor="let p of pages" class="page-item" [ngClass]="{'active': p.number == currentPage}">
+    	<a class="page-link" [routerLink]="p.url">{{p.number}}</a>
+    </li>
+    <li class="page-item" [ngClass]="{'disabled': nextDisabled}">
+    	<a class="page-link" [routerLink]="nextUrl">Next</a>
+    </li>
+  </ul>
+</nav>
